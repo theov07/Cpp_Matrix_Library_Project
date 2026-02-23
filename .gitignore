@@ -1,0 +1,30 @@
+# Build directories
+obj/
+bin/
+build/
+
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled executables
+*.exe
+*.out
+*.app
+matrix_program
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store

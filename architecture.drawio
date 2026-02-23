@@ -1,0 +1,247 @@
+<mxfile host="65bd71144e">
+    <diagram name="Matrix Project Architecture" id="matrix-project-architecture">
+        <mxGraphModel dx="3960" dy="2109" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="C++ Matrix Class Project - Architecture &amp; Data Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontColor=light-dark(#FFFFFF,#FFFFFF);fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="30" width="1000" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-lane" value="Compilation Pipeline - Make Build Process" style="swimlane;html=1;startSize=30;horizontal=1;containerType=tree;strokeColor=light-dark(#FFFFFF,#FFFFFF);fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;dashed=1;dashPattern=1 1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="110" width="1380" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-headers" value="Matrix.h&#xa;&#xa;Class&#xa;declaration" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FFC107;fontColor=#FFC107;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="40" y="130.05" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-matrix-cpp" value="Matrix.cpp&#xa;&#xa;g++ -c" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="180" y="130.05" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-matrix-o" value="Matrix.o&#xa;&#xa;Object file" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FF9800;fontColor=#FF9800;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="320" y="130.05" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-main" value="main.cpp&#xa;&#xa;g++ -c" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="480" y="110.05" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-examples" value="examples.cpp&#xa;&#xa;g++ -c" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="480" y="200" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-tests" value="tests.cpp&#xa;&#xa;g++ -c" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="610" y="110.05" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-link-main" value="Link&#xa;Matrix.o +&#xa;main.o" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="760" y="110.05" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-link-examples" value="Link&#xa;Matrix.o +&#xa;examples.o" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="760" y="200" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-link-tests" value="Link&#xa;Matrix.o +&#xa;tests.o" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="compile-lane" vertex="1">
+                    <mxGeometry x="920" y="110.05" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-bin-main" value="bin/&#xa;matrix_program" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="compile-lane" vertex="1">
+                    <mxGeometry x="1060" y="110.05" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-bin-examples" value="bin/&#xa;examples" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="compile-lane" vertex="1">
+                    <mxGeometry x="1060" y="200" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="compile-bin-tests" value="bin/&#xa;tests" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="compile-lane" vertex="1">
+                    <mxGeometry x="1220" y="110.05" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-headers" target="compile-matrix-cpp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-matrix-cpp" target="compile-matrix-o" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-c3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-main" target="compile-link-main" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="590" y="135"/>
+                            <mxPoint x="590" y="100"/>
+                            <mxPoint x="740" y="100"/>
+                            <mxPoint x="740" y="135"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-examples" target="compile-link-examples" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-c5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-tests" target="compile-link-tests" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="720" y="135"/>
+                            <mxPoint x="720" y="190"/>
+                            <mxPoint x="890" y="190"/>
+                            <mxPoint x="890" y="135"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF50;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-link-main" target="compile-bin-main" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="870" y="135"/>
+                            <mxPoint x="870" y="180"/>
+                            <mxPoint x="1040" y="180"/>
+                            <mxPoint x="1040" y="135"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF50;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-link-examples" target="compile-bin-examples" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-c8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF50;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-link-tests" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1220" y="135.05" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1030" y="135.05"/>
+                            <mxPoint x="1030" y="90.05"/>
+                            <mxPoint x="1200" y="90.05"/>
+                            <mxPoint x="1200" y="135.05"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF9800;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="compile-lane" source="compile-matrix-o" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="370" y="70.05"/>
+                            <mxPoint x="810" y="70.05"/>
+                        </Array>
+                        <mxPoint x="810" y="110.05" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF9800;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="compile-lane" source="compile-matrix-o" target="compile-link-examples" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="370" y="80"/>
+                            <mxPoint x="730" y="80"/>
+                            <mxPoint x="730" y="270"/>
+                            <mxPoint x="810" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-c11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF9800;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="compile-lane" source="compile-matrix-o" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="370" y="90.05"/>
+                            <mxPoint x="950" y="90.05"/>
+                        </Array>
+                        <mxPoint x="950" y="110.05" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="operations-lane" value="Matrix Class - Operations &amp; Methods" style="swimlane;html=1;startSize=30;horizontal=1;containerType=tree;strokeColor=light-dark(#FFFFFF,#FFFFFF);fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;dashed=1;dashPattern=1 1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="480" width="1320" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-constructor" value="Constructor&#xa;&#xa;Matrix(rows,&#xa;cols)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FFC107;fontColor=#FFC107;strokeWidth=2;fontStyle=1" parent="operations-lane" vertex="1">
+                    <mxGeometry x="50" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-access" value="Element&#xa;Access&#xa;&#xa;operator()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="170" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-addition" value="Addition&#xa;&#xa;operator+&#xa;A + B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="290" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-mult-matrix" value="Matrix ×&#xa;Matrix&#xa;&#xa;operator*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="410" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-mult-vector" value="Matrix ×&#xa;Vector&#xa;&#xa;operator*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="530" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-transpose" value="Transpose&#xa;&#xa;M^T&#xa;transpose()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FF9800;fontColor=#FF9800;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="650" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-determinant" value="Determinant&#xa;&#xa;det(A)&#xa;recursive" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#E91E63;fontColor=#E91E63;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="770" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-equality" value="Equality&#xa;&#xa;operator==&#xa;A == B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#00BCD4;fontColor=#00BCD4;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="890" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-print" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Display&lt;br&gt;&lt;br&gt;print()&lt;br&gt;formatted&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=light-dark(#FFFFFF,#FFFFFF);fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="1010" y="70" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ops-exceptions" value="Exceptions&#xa;&#xa;invalid_argument&#xa;out_of_range" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#F44336;fontColor=#F44336;strokeWidth=2;" parent="operations-lane" vertex="1">
+                    <mxGeometry x="1130" y="70" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="execution-lane" value="Execution Flow - Programs &amp; Testing" style="swimlane;html=1;startSize=30;horizontal=1;containerType=tree;strokeColor=light-dark(#FFFFFF,#FFFFFF);fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;dashed=1;dashPattern=1 1;" parent="1" vertex="1">
+                    <mxGeometry x="75" y="770" width="1770" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-main-start" value="matrix_program&#xa;&#xa;./bin/matrix_program" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="execution-lane" vertex="1">
+                    <mxGeometry x="50" y="155" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-main-demos" value="Demos&#xa;&#xa;6 demonstrations" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="230" y="155" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-main-output" value="Console&#xa;Output&#xa;&#xa;Formatted&#xa;matrices" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#00BCD4;fontColor=#00BCD4;strokeWidth=2;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="390" y="155" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-examples-start" value="examples&#xa;&#xa;./bin/examples" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="execution-lane" vertex="1">
+                    <mxGeometry x="550" y="155" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-examples-math" value="Math&#xa;Examples&#xa;&#xa;Identity,&#xa;Symmetric,&#xa;Powers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FF9800;fontColor=#FF9800;strokeWidth=2;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="730" y="155" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-examples-output" value="Console&#xa;Output&#xa;&#xa;Mathematical&#xa;properties" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#00BCD4;fontColor=#00BCD4;strokeWidth=2;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="890" y="155" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-tests-start" value="tests&#xa;&#xa;./bin/tests" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="execution-lane" vertex="1">
+                    <mxGeometry x="1030" y="155" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-tests-run" value="Run Tests&#xa;&#xa;9 test cases&#xa;assert-based" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#E91E63;fontColor=#E91E63;strokeWidth=2;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="1190" y="155" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-tests-result" value="Results&#xa;&#xa;9 passed&#xa;0 failed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;fontStyle=1" parent="execution-lane" vertex="1">
+                    <mxGeometry x="1350" y="155" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-main-start" target="exec-main-demos" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-main-demos" target="exec-main-output" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-examples-start" target="exec-examples-math" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-examples-math" target="exec-examples-output" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-tests-start" target="exec-tests-run" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF50;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="execution-lane" source="exec-tests-run" target="exec-tests-result" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-make-targets" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Make Targets:&lt;br&gt;&lt;br&gt;• make all - Build all&lt;br&gt;• make run - Run main&lt;br&gt;• make run-examples&lt;br&gt;• make test - Run tests&lt;br&gt;• make clean - Remove files&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;align=center;verticalAlign=top;size=18;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="1540" y="260" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="exec-demo-list" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Demonstrations:&lt;br&gt;&lt;br&gt;1. Basic ops (A+B)&lt;br&gt;2. Transpose&lt;br&gt;3. Matrix × Matrix&lt;br&gt;4. Matrix × Vector&lt;br&gt;5. Determinant&lt;br&gt;6. Exceptions&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;align=center;verticalAlign=top;size=18;" parent="execution-lane" vertex="1">
+                    <mxGeometry x="1540" y="70" width="170" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="LEGEND" style="swimlane;html=1;startSize=30;horizontal=1;containerType=tree;strokeColor=light-dark(#FFFFFF,#FFFFFF);fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeWidth=2;dashed=1;dashPattern=1 1;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="1250" width="540" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-source" value="Source Files" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FFC107;fontColor=#FFC107;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="40" y="70" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-cpp" value="C++ Files" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#2196F3;fontColor=#2196F3;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="160" y="70" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-build" value="Build/Link" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#9C27B0;fontColor=#9C27B0;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="280" y="70" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-exec" value="Executables" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#4CAF50;fontColor=#4CAF50;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="400" y="70" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-obj" value="Objects" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#FF9800;fontColor=#FF9800;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="40" y="120" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-output" value="Output/Docs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#00BCD4;fontColor=#00BCD4;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="160" y="120" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-compute" value="Computation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#E91E63;fontColor=#E91E63;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="280" y="120" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-error" value="Exceptions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a1a;strokeColor=#F44336;fontColor=#F44336;strokeWidth=2;" parent="2" vertex="1">
+                    <mxGeometry x="400" y="120" width="100" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
