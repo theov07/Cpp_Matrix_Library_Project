@@ -47,6 +47,7 @@ namespace {
         return det;
     }
 }
+
 Matrix::Matrix(size_t rows, size_t cols) : rows(rows), cols(cols) {
     if (rows == 0 || cols == 0) {
         throw std::invalid_argument("Matrix dimensions must be greater than zero");
@@ -119,12 +120,13 @@ Matrix Matrix::operator*(const Matrix& other) const {
     Matrix result(rows, other.cols);
 
     for (size_t i = 0; i < rows; ++i) {
-        for (size_t j = 0; j < other.cols; ++j) {
-            double sum = 0.0;
-            for (size_t k = 0; k < cols; ++k) {
-                sum += (*this)(i, k) * other(k, j);
+        for (size_t k = 0; k < cols; ++k) {
+
+            double val_A = data[i * cols + k];
+
+            for (size_t j = 0; j < other.cols; ++j) {
+                result.data[i * other.cols + j] += val_A * other.data[k * other.cols + j];
             }
-            result(i, j) = sum;
         }
     }
 
