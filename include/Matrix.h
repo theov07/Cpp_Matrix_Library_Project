@@ -30,19 +30,12 @@ public:
     Matrix operator*(const Matrix& other) const;
     std::vector<double> operator*(const std::vector<double>& vec) const;
     bool operator==(const Matrix& other) const;
-    
+
     Matrix transpose() const;
     double determinant() const;
-    void print(std::ostream& os = std::cout) const;
 
-private:
-    // Helper functions for determinant
-    double calculateDeterminant(const std::vector<std::vector<double>>& mat, size_t n) const;
-    std::vector<std::vector<double>> getSubmatrix(
-        const std::vector<std::vector<double>>& mat, 
-        size_t excludeRow, 
-        size_t excludeCol, 
-        size_t n) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Matrix& mat);
 
 #endif
