@@ -25,7 +25,8 @@ C++17 implementation of a `Matrix` class providing core linear algebra operation
 │   ├── main.cpp  
 │   ├── examples.cpp  
 │   ├── tests.cpp  
-│   └── tests_extended.cpp  
+│   ├── tests_extended.cpp  
+│   └── benchmark.cpp  
 ├── Makefile  
 └── architecture.drawio  
 
@@ -42,6 +43,7 @@ make              # Build project
 make run          # Run main demo
 make run-examples # Run additional examples
 make test         # Run basic test suite (9 tests)
+make bench        # Run performance benchmark
 make clean        # Remove build files
 ```
 
