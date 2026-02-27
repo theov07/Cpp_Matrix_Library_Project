@@ -178,7 +178,7 @@ Matrix Matrix::transpose() const {
 
 double Matrix::determinant() const {
     if (rows != cols) {
-        throw std::invalid_argument("Matrix must be squared to compute determinant");
+        throw std::invalid_argument("Matrix must be square to compute determinant");
     }
     if (rows == 0) {
         return 1.0;
