@@ -37,7 +37,6 @@ void print_row(const string& label, double us) {
          << right << setw(14) << fixed << setprecision(2) << us << " us\n";
 }
 
-// ------------------- Benchmarks -------------------
 
 void bench_addition() {
     print_header("Matrix Addition (A + B)");
@@ -108,12 +107,9 @@ void bench_determinant() {
     cout << "  (cofactor expansion: O(n!) complexity)\n";
 }
 
-// --------------------------------------------------
 
 int main() {
-    cout << "\n========================================\n";
     cout << "   Matrix Operations - Benchmark\n";
-    cout << "========================================\n";
 
     bench_addition();
     bench_matmul();
