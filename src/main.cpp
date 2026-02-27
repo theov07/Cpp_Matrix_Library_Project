@@ -5,7 +5,7 @@
 using namespace std;
 
 void demonstrateBasicOperations() {
-    cout << "=== Basic Operations ===" << endl;
+    cout << "Basic Operations" << endl;
 
     Matrix A({{1, 2, 3},
               {4, 5, 6},
@@ -27,7 +27,7 @@ void demonstrateBasicOperations() {
 }
 
 void demonstrateTranspose() {
-    cout << "\n=== Transpose ===" << endl;
+    cout << "\nTranspose" << endl;
 
     Matrix M({{1, 2, 3, 4},
               {5, 6, 7, 8}});
@@ -40,7 +40,7 @@ void demonstrateTranspose() {
 }
 
 void demonstrateMultiplication() {
-    cout << "\n=== Multiplication ===" << endl;
+    cout << "\nMultiplication" << endl;
 
     Matrix A({{1, 2},
               {3, 4}});
@@ -54,7 +54,7 @@ void demonstrateMultiplication() {
 }
 
 void demonstrateMatrixVector() {
-    cout << "\n=== Matrix-Vector ===" << endl;
+    cout << "\nMatrix-Vector" << endl;
 
     Matrix A({{1, 2, 3},
               {4, 5, 6}});
@@ -72,7 +72,7 @@ void demonstrateMatrixVector() {
 }
 
 void demonstrateDeterminant() {
-    cout << "\n=== Determinant ===" << endl;
+    cout << "\nDeterminant" << endl;
 
     Matrix M2({{3, 8},
                {4, 6}});
@@ -90,7 +90,7 @@ void demonstrateDeterminant() {
 }
 
 void demonstrateExceptionHandling() {
-    cout << "\n=== Exception Handling ===" << endl;
+    cout << "\nException Handling" << endl;
 
     try {
         Matrix A(2, 3);

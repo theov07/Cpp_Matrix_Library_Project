@@ -25,7 +25,7 @@ Matrix make_filled(size_t n) {
 }
 
 void print_header(const string& title) {
-    cout << "\n=== " << title << " ===\n";
+    cout << "\n" << title << "\n";
     cout << left << setw(10) << "Size"
          << right << setw(16) << "Avg time (us)"
          << "\n";
@@ -104,12 +104,12 @@ void bench_determinant() {
         });
         print_row(to_string(n) + "x" + to_string(n), us);
     }
-    cout << "  (cofactor expansion: O(n!) complexity)\n";
+    cout << "(cofactor expansion: O(n!) complexity)\n";
 }
 
 
 int main() {
-    cout << "   Matrix Operations - Benchmark\n";
+    cout << "Matrix Operations - Benchmark\n";
 
     bench_addition();
     bench_matmul();

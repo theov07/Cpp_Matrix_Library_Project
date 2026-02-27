@@ -4,7 +4,7 @@
 using namespace std;
 
 void example_identity_matrix() {
-    cout << "=== Identity Matrix ===" << endl;
+    cout << "Identity Matrix" << endl;
 
     Matrix I({{1, 0, 0},
               {0, 1, 0},
@@ -24,7 +24,7 @@ void example_identity_matrix() {
 }
 
 void example_symmetric_matrix() {
-    cout << "\n=== Symmetric Matrix ===" << endl;
+    cout << "\nSymmetric Matrix" << endl;
 
     Matrix S({{1, 2, 3},
               {2, 4, 5},
@@ -40,7 +40,7 @@ void example_symmetric_matrix() {
 }
 
 void example_matrix_powers() {
-    cout << "\n=== Matrix Powers ===" << endl;
+    cout << "\nMatrix Powers" << endl;
 
     Matrix A({{1, 1},
               {0, 1}});
@@ -55,7 +55,7 @@ void example_matrix_powers() {
 }
 
 void example_determinant_properties() {
-    cout << "\n=== Determinant Properties ===" << endl;
+    cout << "\nDeterminant Properties" << endl;
 
     Matrix A({{2, 3},
               {1, 4}});
