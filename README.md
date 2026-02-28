@@ -18,6 +18,7 @@ C++17 implementation of a `Matrix` class providing core linear algebra operation
 
 ## Project Structure
 
+```
 .
 ├── include/Matrix.h  
 ├── src/  
@@ -29,6 +30,7 @@ C++17 implementation of a `Matrix` class providing core linear algebra operation
 │   └── benchmark.cpp  
 ├── Makefile  
 └── architecture.drawio  
+```
 
 `architecture.drawio` provides a visual overview of the compilation pipeline and data flow.
 
@@ -84,5 +86,5 @@ src/tests_extended.cpp -o bin/tests_extended
 
 ---
 
-**M2 272 – Université Paris Dauphine**  
-C++ Course Project
+C++ Course Academic Project - **Paris Dauphine University** - Master 2 in Financial Engineering - Major in Quantitative Finance
+
